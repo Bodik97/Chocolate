@@ -1,0 +1,30 @@
+
+@mixin container {
+    max-width: 1136px;
+    margin: 0 auto;
+}  
+@mixin title-h2 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+@mixin button {
+    width: 144px;
+    height: 45px;
+    background-color: #FD9222;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: aliceblue;
+}
