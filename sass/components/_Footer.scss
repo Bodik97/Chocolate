@@ -1,0 +1,61 @@
+@use '../utils/variables' as *;
+
+.main-footer {
+	background-color: $background-color_5;
+	width: 100%;
+	padding: 50px 32px;
+}
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+}
+.footer-tagline {
+	color: $color_2;
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 34px;
+	letter-spacing: -0.56px;
+	max-width: 300px;
+}
+.footer-social {
+	margin-top: 32px;
+	display: flex;
+	gap: 18px;
+}
+.footer-contact {
+	color: $color_2;
+}
+.contact-title {
+	font-size: 14px;
+	font-weight: 500;
+}
+.contact-info {
+	margin-top: 14px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+.contact-link {
+	color: $color_2;
+	text-decoration: none;
+	font-size: 14px;
+	letter-spacing: -0.28px;
+}
+.footer-divider {
+	margin: 58px 0 23px;
+	border: none;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-menu {
+	display: flex;
+	gap: 24px;
+	list-style: none;
+	flex-wrap: wrap;
+	a {
+		color: $color_2;
+		text-decoration: none;
+		font-size: 14px;
+		font-weight: 500;
+		letter-spacing: -0.28px;
+	}
+}

@@ -1,0 +1,68 @@
+@use '../utils/variables' as *;
+@use '../utils/buttons' as *;
+
+.top-sellers-section {
+    padding: 80px 20px;
+    
+        .section-title {
+        text-align: center;
+        padding-bottom: 18px;
+    
+            .title-accent {
+                color: $background-color_3; 
+            }
+        }
+    
+        .sellers-content {
+        max-width: 1136px;
+        height: 646px;
+        margin: 0 auto;
+        padding: 32px;
+
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .sellers-images {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px;
+        
+                .seller-image {
+                    width: calc((100% - 32px) / 3); // 3 картинки з відступами
+                    height: auto;
+                    border-radius: 20px;
+                    object-fit: cover;
+                }
+            }
+        }
+    
+        .sellers-text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    
+        .sellers-description {
+            max-width: 45%;
+            font-size: 16px;
+            color: #111111;
+            line-height: 1.5;
+        }
+        .btn-primary {
+            @include btn-base;
+            width: 144px;
+            margin-bottom: 28px;
+            color: $background-color_1 ;
+            background-color: $background-color_3;
+            &:hover {
+                background-color: #fff;
+                color: #fd9222;
+                border: 1px solid #fd9222;
+            }
+        }
+    }
+    
+}

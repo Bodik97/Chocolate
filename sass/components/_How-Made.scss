@@ -1,0 +1,58 @@
+@use '../utils/variables' as *;
+
+.how-made-section {
+	margin-top: 128px;
+	width: 100%;
+	max-width: 1136px;
+
+	.section-title {
+        text-align: center;
+    
+            .title-accent {
+                color: $background-color_3; 
+            }
+        }
+
+	.process-content {
+		display: flex;
+		gap: 20px;
+	}
+	.process-image {
+		width: 600px;
+		border-radius: 15px;
+		object-fit: contain;
+	}
+	.process-steps {
+		background-color: $background-color_6;
+		border-radius: 15px;
+		padding: 32px;
+		flex: 1;
+	}
+	.process-title {
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 24px;
+		margin-bottom: 28px;
+	}
+	.steps-list {
+		list-style: none;
+	}
+	.step-item {
+		display: flex;
+		gap: 8px;
+		margin-bottom: 24px;
+		font-size: 14px;
+		line-height: 18px;
+		letter-spacing: -0.28px;
+		&::before {
+			content: "";
+			width: 8px;
+			height: 8px;
+			background-color: $background-color_7;
+			border: 1px solid #ECEDED;
+			border-radius: 50%;
+			margin-top: 5px;
+			flex-shrink: 0;
+		}
+	}
+}

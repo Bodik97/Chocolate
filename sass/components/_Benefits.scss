@@ -1,0 +1,46 @@
+
+@use '../utils/variables' as *;
+
+.benefits-section {
+	background-color: $background-color_5;
+	width: 100%;
+	padding: 50px;
+	margin-top: 72px;
+}
+.benefits-container {
+	display: flex;
+	gap: 70px;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 1136px;
+	margin: 0 auto;
+}
+.benefit-card {
+	flex: 1;
+	min-width: 240px;
+	max-width: 308px;
+}
+.benefit-icon {
+	width: 62px;
+	height: 62px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 365px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.benefit-content {
+	margin-top: 22px;
+}
+.benefit-title {
+	color: $color_2;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 18px;
+}
+.benefit-description {
+	color: $color_2;
+	font-size: 14px;
+	line-height: 18px;
+	letter-spacing: -0.28px;
+}
