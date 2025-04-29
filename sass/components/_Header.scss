@@ -1,63 +1,99 @@
 @use '../utils/variables' as *;
 
-.chocolate-desktop {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-top: 24px;
-	overflow: hidden;
-}
 .main-header {
+  padding: 24px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+	cursor: pointer;
+
+    .brand-name {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.54px;
+      color: $color_1;
+      display: flex;
+      align-items: center;
+
+      .brand-name-italic {
+        font-style: italic;
+        margin-right: 4px;
+      }
+    }
+
+    .logo-image {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    .nav-list {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li a {
+        font-size: 14px;
+        font-weight: 500;
+        color: $color_1;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s ease;
+
+        &:hover,
+        &:focus {
+          color: $background-color_3;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          width: 0;
+          height: 2px;
+          background-color: $background-color_3;
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after,
+        &:focus::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .social-links {
 	display: flex;
 	align-items: center;
-	gap: 40px 188px;
-	justify-content: start;
-	flex-wrap: wrap;
-	width: 100%;
-	max-width: 1136px;
-}
-.logo {
-	display: flex;
-	align-items: center;
-	gap: 4px;
-}
-.brand-name {
-	font-size: 18px;
-	color: $color_1;
-	font-weight: 700;
-	letter-spacing: -0.54px;
-}
-.brand-name-italic {
-	font-style: italic;
-	font-weight: 700;
-}
-.logo-image {
-	width: 24px;
-	height: 24px;
-}
-.main-nav {
-	display: flex;
-	align-items: center;
-	gap: 40px 137px;
-	flex-wrap: wrap;
-}
-.nav-list {
-	display: flex;
-	gap: 24px;
-	list-style: none;
-	font-size: 14px;
-	font-weight: 500;
-	letter-spacing: -0.28px;
-	a {
-		color: $color_1;
-		text-decoration: none;
+	gap: 14px;
+	margin-left: 40px;
+
+	.social-icon {
+	  width: 22px;
+	  height: 22px;
+	  transition: transform 0.3s ease, filter 0.3s ease;
+	  
+	  &:hover,
+	  &:focus {
+		transform: scale(1.1);
+		filter: brightness(1.2);
+	  }
 	}
-}
-.social-links {
-	display: flex;
-	gap: 18px;
-}
-.social-icon {
-	width: 24px;
-	height: 24px;
+  }
 }

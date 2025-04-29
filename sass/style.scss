@@ -1,4 +1,6 @@
+
 @use './utils/variables' as *;
+@use './utils/buttons';
 
 @use './components/Header';
 @use './components/Hero';
@@ -33,4 +35,9 @@ h2 {
     text-align: center;
 	letter-spacing: -0.72px;
 	letter-spacing: -0.03em;
+}
+.container {
+	width: 100%;
+    max-width: 1136px;
+    margin: 0 auto;
 }
