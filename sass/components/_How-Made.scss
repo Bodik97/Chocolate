@@ -5,39 +5,39 @@
 	width: 100%;
 	max-width: 1136px;
 
-	.section-title {
+	& .section-title {
         text-align: center;
     
-            .title-accent {
+            & .title-accent {
                 color: $background-color_3; 
             }
         }
 
-	.process-content {
+	& .process-content {
 		display: flex;
 		gap: 20px;
 	}
-	.process-image {
+	& .process-image {
 		width: 600px;
 		border-radius: 15px;
 		object-fit: contain;
 	}
-	.process-steps {
+	& .process-steps {
 		background-color: $background-color_6;
 		border-radius: 15px;
 		padding: 32px;
 		flex: 1;
 	}
-	.process-title {
+	& .process-title {
 		font-size: 18px;
 		font-weight: 600;
 		line-height: 24px;
 		margin-bottom: 28px;
 	}
-	.steps-list {
+	& .steps-list {
 		list-style: none;
 	}
-	.step-item {
+	& .step-item {
 		display: flex;
 		gap: 8px;
 		margin-bottom: 24px;
@@ -55,4 +55,95 @@
 			flex-shrink: 0;
 		}
 	}
+}
+
+// Медіа-запити для адаптації
+@media (max-width: 992px) {
+  .how-made-section {
+    margin-top: 100px;
+    
+    & .process-content {
+      gap: 15px;
+    }
+    
+    & .process-image {
+      width: 500px;
+    }
+    
+    & .process-steps {
+      padding: 28px;
+    }
+    
+    & .process-title {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+    
+    & .step-item {
+      margin-bottom: 20px;
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .how-made-section {
+    margin-top: 80px;
+    
+    & .process-content {
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    & .process-image {
+      width: 100%;
+    }
+    
+    & .process-steps {
+      padding: 24px;
+    }
+    
+    & .process-title {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    
+    & .step-item {
+      margin-bottom: 16px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .how-made-section {
+    margin-top: 60px;
+    
+    & .process-content {
+      gap: 15px;
+    }
+    
+    & .process-steps {
+      padding: 20px;
+    }
+    
+    & .process-title {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    
+    & .step-item {
+      margin-bottom: 12px;
+      font-size: 11px;
+      line-height: 14px;
+      
+      &::before {
+        width: 6px;
+        height: 6px;
+        margin-top: 4px;
+      }
+    }
+  }
 }

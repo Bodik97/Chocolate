@@ -1,6 +1,6 @@
-
 @use './utils/variables' as *;
 @use './utils/buttons';
+@use './utils/mixins' as *;
 
 @use './components/Header';
 @use './components/Hero';
@@ -13,31 +13,90 @@
 @use './components/Newsletter';
 @use './components/Footer';
 
+// Reset and base styles
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
 body {
 	font-family: $font-family_1;
 	background-color: $background-color_1;
+	color: $text-color_1;
+	line-height: $line-height-sm;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-weight: $font-weight-semibold;
+	line-height: $line-height-lg;
+}
+
+h1 {
+	@include figma-font($font-size-xxl, $font-weight-bold, $line-height-xxl);
+	text-transform: uppercase;
 }
 
 h2 {
-	margin: 0 auto;
-	padding-bottom: 50px;
-    width: 411px;
-	
-	font-family: $font-family_1;
-    font-weight: 600;
-    line-height: 28px;
-    text-transform: uppercase;
-    text-align: center;
-	letter-spacing: -0.72px;
-	letter-spacing: -0.03em;
+	@include figma-font($font-size-lg, $font-weight-semibold, $line-height-lg);
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: $spacing-lg;
+	max-width: 411px;
+	margin-left: auto;
+	margin-right: auto;
 }
+
+h3 {
+	@include figma-font($font-size-md, $font-weight-semibold, $line-height-md);
+}
+
+// Layout
 .container {
-	width: 100%;
-    max-width: 1136px;
-    margin: 0 auto;
+	@include figma-container($container-max-width);
+	padding: 0 $container-padding;
+}
+
+// Sections
+section {
+	@include figma-section;
+}
+
+// Responsive adjustments
+@include respond-to("lg") {
+	h1 {
+		font-size: $font-size-xl;
+		line-height: $line-height-xl;
+	}
+
+	h2 {
+		font-size: $font-size-md;
+		margin-bottom: $spacing-md;
+		max-width: 350px;
+	}
+
+	h3 {
+		font-size: $font-size-sm;
+		line-height: $line-height-sm;
+	}
+}
+
+@include respond-to("sm") {
+	h1 {
+		font-size: $font-size-lg;
+		line-height: $line-height-lg;
+	}
+
+	h2 {
+		font-size: $font-size-sm;
+		margin-bottom: $spacing-sm;
+		max-width: 300px;
+	}
+
+	h3 {
+		font-size: $font-size-xs;
+		line-height: $line-height-xs;
+	}
 }

@@ -1,20 +1,19 @@
-
 @use '../utils/variables' as *;
 @use '../utils/buttons' as *;
 
 .top-sellers-section {
     padding: 80px 20px;
     
-        .section-title {
+    & .section-title {
         text-align: center;
         padding-bottom: 18px;
     
-            .title-accent {
-                color: $background-color_3; 
-            }
+        & .title-accent {
+            color: $background-color_3; 
         }
+    }
     
-        .sellers-content {
+    & .sellers-content {
         max-width: 1136px;
         height: 646px;
         margin: 0 auto;
@@ -25,34 +24,34 @@
         flex-direction: column;
         justify-content: space-between;
 
-        .sellers-images {
+        & .sellers-images {
             display: flex;
             justify-content: space-between;
             gap: 16px;
             margin-bottom: 20px;
         
-                .seller-image {
-                    width: calc((100% - 32px) / 3); // 3 картинки з відступами
-                    height: auto;
-                    border-radius: 20px;
-                    object-fit: cover;
-                }
+            & .seller-image {
+                width: calc((100% - 32px) / 3); // 3 картинки з відступами
+                height: auto;
+                border-radius: 20px;
+                object-fit: cover;
             }
         }
+    }
     
-        .sellers-text {
+    & .sellers-text {
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
     
-        .sellers-description {
+        & .sellers-description {
             max-width: 45%;
             font-size: 16px;
             color: #111111;
             line-height: 1.5;
         }
-        .btn-primary {
+        & .btn-primary {
             @include btn-base;
             width: 144px;
             margin-bottom: 28px;
@@ -66,4 +65,111 @@
         }
     }
     
+}
+
+// Медіа-запити для адаптації
+@media (max-width: 992px) {
+  .top-sellers-section {
+    padding: 60px 15px;
+    
+    & .sellers-content {
+      height: auto;
+      padding: 24px;
+      
+      & .sellers-images {
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+    }
+    
+    & .sellers-text {
+      & .sellers-description {
+        font-size: 15px;
+        max-width: 50%;
+      }
+      
+      & .btn-primary {
+        width: 130px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .top-sellers-section {
+    padding: 40px 12px;
+    
+    & .section-title {
+      padding-bottom: 15px;
+    }
+    
+    & .sellers-content {
+      padding: 20px;
+      
+      & .sellers-images {
+        flex-direction: column;
+        gap: 16px;
+        
+        & .seller-image {
+          width: 100%;
+        }
+      }
+    }
+    
+    & .sellers-text {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      
+      & .sellers-description {
+        max-width: 100%;
+        font-size: 14px;
+      }
+      
+      & .btn-primary {
+        width: 120px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .top-sellers-section {
+    padding: 30px 10px;
+    
+    & .section-title {
+      padding-bottom: 12px;
+    }
+    
+    & .sellers-content {
+      padding: 16px;
+      border-radius: 15px;
+      
+      & .sellers-images {
+        gap: 12px;
+        margin-bottom: 12px;
+        
+        & .seller-image {
+          border-radius: 15px;
+        }
+      }
+    }
+    
+    & .sellers-text {
+      gap: 15px;
+      
+      & .sellers-description {
+        font-size: 13px;
+        line-height: 1.4;
+      }
+      
+      & .btn-primary {
+        width: 110px;
+        margin-bottom: 16px;
+        font-size: 13px;
+      }
+    }
+  }
 }

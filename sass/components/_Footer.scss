@@ -1,61 +1,261 @@
 @use '../utils/variables' as *;
 
 .main-footer {
-	background-color: $background-color_5;
-	width: 100%;
-	padding: 50px 32px;
+	@include figma-padding(50px, 0, 50px, 0);
+	background-color: $background-color_2;
+
+	.footer-content {
+		@include figma-flex(row, space-between, flex-start);
+		gap: 50px;
+		margin-bottom: 24px;
+	}
+
+	.footer-info {
+		max-width: 300px;
+	}
+
+	.footer-tagline {
+		@include figma-font(28px, 500, 1.21);
+		color: $text-color_2;
+
+		.title-accent {
+			color: $background-color_3;
+		}
+	}
+
+	.footer-contact {
+		@include figma-flex(column, flex-start, flex-start);
+		gap: 14px;
+	}
+
+	.contact-title {
+		@include figma-font(14px, 500, 1.29);
+		color: $text-color_2;
+	}
+
+	.contact-info {
+		@include figma-flex(column, flex-start, flex-start);
+		gap: 4px;
+	}
+
+	.contact-link {
+		@include figma-font(14px, 400, 1.29);
+		color: $text-color_2;
+		transition: color $transition-base;
+
+		&:hover {
+			color: $background-color_3;
+		}
+	}
+
+	.footer-social {
+		@include figma-flex(row, flex-start, center);
+		gap: 14px;
+	}
+
+	.social-icon {
+		width: 24px;
+		height: 24px;
+		transition: transform $transition-base;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	.footer-divider {
+		border: none;
+		height: 1px;
+		background-color: rgba(255, 255, 255, 0.1);
+		margin-bottom: 24px;
+	}
+
+	.footer-nav {
+		.footer-menu {
+			@include figma-flex(row, center, center);
+			gap: 24px;
+			flex-wrap: wrap;
+		}
+
+		a {
+			@include figma-font(14px, 500, 1.14);
+			color: $text-color_2;
+			transition: color $transition-base;
+
+			&:hover {
+				color: $background-color_3;
+			}
+		}
+	}
+
+	@include respond-to("lg") {
+		.footer-content {
+			flex-direction: column;
+			gap: 32px;
+		}
+
+		.footer-info {
+			max-width: 100%;
+			text-align: center;
+		}
+
+		.footer-contact {
+			align-items: center;
+		}
+
+		.footer-social {
+			justify-content: center;
+		}
+	}
+
+	@include respond-to("sm") {
+		padding: 32px 0;
+
+		.footer-content {
+			gap: 24px;
+		}
+
+		.footer-tagline {
+			font-size: 24px;
+		}
+
+		.contact-title {
+			font-size: 12px;
+		}
+
+		.contact-link {
+			font-size: 12px;
+		}
+
+		.footer-menu {
+			gap: 16px;
+		}
+
+		a {
+			font-size: 12px;
+		}
+	}
 }
-.footer-content {
-	display: flex;
-	justify-content: space-between;
+
+// Медіа-запити для адаптації
+@media (max-width: 992px) {
+	.main-footer {
+		padding: 40px 24px;
+		
+		& .footer-content {
+			flex-wrap: wrap;
+			gap: 30px;
+		}
+		
+		& .footer-tagline {
+			font-size: 24px;
+			line-height: 30px;
+			max-width: 250px;
+		}
+		
+		& .footer-social {
+			margin-top: 25px;
+			gap: 15px;
+		}
+		
+		& .footer-divider {
+			margin: 45px 0 20px;
+		}
+		
+		& .footer-menu {
+			gap: 20px;
+		}
+	}
 }
-.footer-tagline {
-	color: $color_2;
-	font-size: 28px;
-	font-weight: 500;
-	line-height: 34px;
-	letter-spacing: -0.56px;
-	max-width: 300px;
+
+@media (max-width: 768px) {
+	.main-footer {
+		padding: 30px 20px;
+		
+		& .footer-content {
+			flex-direction: column;
+			gap: 25px;
+		}
+		
+		& .footer-tagline {
+			font-size: 20px;
+			line-height: 26px;
+			max-width: 100%;
+		}
+		
+		& .footer-social {
+			margin-top: 20px;
+			gap: 12px;
+		}
+		
+		& .contact-title {
+			font-size: 13px;
+		}
+		
+		& .contact-info {
+			margin-top: 12px;
+			gap: 3px;
+		}
+		
+		& .contact-link {
+			font-size: 13px;
+		}
+		
+		& .footer-divider {
+			margin: 35px 0 18px;
+		}
+		
+		& .footer-menu {
+			gap: 16px;
+			
+			& a {
+				font-size: 13px;
+			}
+		}
+	}
 }
-.footer-social {
-	margin-top: 32px;
-	display: flex;
-	gap: 18px;
-}
-.footer-contact {
-	color: $color_2;
-}
-.contact-title {
-	font-size: 14px;
-	font-weight: 500;
-}
-.contact-info {
-	margin-top: 14px;
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
-}
-.contact-link {
-	color: $color_2;
-	text-decoration: none;
-	font-size: 14px;
-	letter-spacing: -0.28px;
-}
-.footer-divider {
-	margin: 58px 0 23px;
-	border: none;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-.footer-menu {
-	display: flex;
-	gap: 24px;
-	list-style: none;
-	flex-wrap: wrap;
-	a {
-		color: $color_2;
-		text-decoration: none;
-		font-size: 14px;
-		font-weight: 500;
-		letter-spacing: -0.28px;
+
+@media (max-width: 576px) {
+	.main-footer {
+		padding: 25px 15px;
+		
+		& .footer-content {
+			gap: 20px;
+		}
+		
+		& .footer-tagline {
+			font-size: 18px;
+			line-height: 24px;
+		}
+		
+		& .footer-social {
+			margin-top: 15px;
+			gap: 10px;
+		}
+		
+		& .contact-title {
+			font-size: 12px;
+		}
+		
+		& .contact-info {
+			margin-top: 10px;
+			gap: 2px;
+		}
+		
+		& .contact-link {
+			font-size: 12px;
+		}
+		
+		& .footer-divider {
+			margin: 30px 0 15px;
+		}
+		
+		& .footer-menu {
+			gap: 12px;
+			
+			& a {
+				font-size: 12px;
+			}
+		}
 	}
 }

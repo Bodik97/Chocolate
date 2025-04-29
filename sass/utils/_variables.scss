@@ -1,13 +1,70 @@
-$color_1: #111111;
-$color_2: #FFFFFF;
-$color_3: #FD9222;
-
-$font-family_1: 'Montserrat', -apple-system, 'Roboto', 'Helvetica', sans-serif;
-
+// Colors
 $background-color_1: #FAFAFA;
-$background-color_2: #FCF1E0;
+$background-color_2: #1E1823;
 $background-color_3: #FD9222;
-$background-color_4: transparent;
-$background-color_5: #1E1823;
-$background-color_6: #FFFFFF;
-$background-color_7: #4C4C4C;
+$background-color_4: #FCF1E0;
+$text-color_1: #111111;
+$text-color_2: #FFFFFF;
+$text-color_3: rgba(17, 17, 17, 0.7);
+
+// Typography
+$font-family_1: 'Montserrat', sans-serif;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Breakpoints
+$breakpoint-xxl: 1440px;
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+$breakpoint-xs: 375px;
+
+// Spacing
+$spacing-xxl: 100px;
+$spacing-xl: 80px;
+$spacing-lg: 60px;
+$spacing-md: 40px;
+$spacing-sm: 20px;
+$spacing-xs: 10px;
+
+// Grid
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 15px;
+$border-radius-xl: 20px;
+
+// Transitions
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Z-index
+$z-index-header: 1000;
+$z-index-modal: 2000;
+$z-index-tooltip: 3000;
+
+// Container
+$container-max-width: 1200px;
+$container-padding: 15px;
+
+// Typography sizes
+$font-size-xxl: 48px;
+$font-size-xl: 36px;
+$font-size-lg: 24px;
+$font-size-md: 18px;
+$font-size-sm: 14px;
+$font-size-xs: 12px;
+
+// Line heights
+$line-height-xxl: 1.04;
+$line-height-xl: 1.11;
+$line-height-lg: 1.17;
+$line-height-md: 1.22;
+$line-height-sm: 1.29;
+$line-height-xs: 1.33;

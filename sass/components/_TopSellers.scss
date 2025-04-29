@@ -1,0 +1,94 @@
+.top-sellers-section {
+  @include figma-padding(100px, 0, 100px, 0);
+  background-color: $background-color_1;
+
+  .section-title {
+    @include figma-font(24px, 600, 1.17);
+    color: $text-color_1;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+
+    .title-accent {
+      color: $background-color_3;
+    }
+  }
+
+  .sellers-content {
+    @include figma-flex(row, space-between, center);
+    gap: 50px;
+  }
+
+  .sellers-images {
+    @include figma-flex(row, space-between, center);
+    gap: 16px;
+    max-width: 50%;
+  }
+
+  .seller-image {
+    @include figma-image;
+    border-radius: $border-radius-lg;
+  }
+
+  .sellers-text {
+    @include figma-flex(column, flex-start, flex-start);
+    gap: 32px;
+    max-width: 50%;
+  }
+
+  .sellers-description {
+    @include figma-font(14px, 400, 1.29);
+    color: $text-color_1;
+  }
+
+  .btn {
+    @include figma-button(primary);
+  }
+
+  @include respond-to("lg") {
+    .sellers-content {
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .sellers-images {
+      max-width: 100%;
+    }
+
+    .sellers-text {
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  @include respond-to("sm") {
+    padding: 72px 0;
+
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 32px;
+    }
+
+    .sellers-images {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .seller-image {
+      width: 100%;
+    }
+
+    .sellers-text {
+      gap: 24px;
+    }
+
+    .sellers-description {
+      font-size: 12px;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+} 
